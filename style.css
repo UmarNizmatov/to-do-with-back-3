@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --primary: #667eea;
@@ -24,7 +24,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
@@ -33,22 +33,31 @@ body {
 
 /* Animated background */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(252, 163, 17, 0.3), transparent 50%),
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(120, 119, 198, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(252, 163, 17, 0.3),
+      transparent 50%
+    ),
     radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.3), transparent 50%);
   animation: bgShift 15s ease infinite;
   z-index: -1;
 }
 
 @keyframes bgShift {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -95,7 +104,7 @@ body::before {
 }
 
 .app-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 3rem;
   font-weight: 700;
   color: #fff;
@@ -112,7 +121,8 @@ body::before {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -212,7 +222,7 @@ input[type="text"] {
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -256,13 +266,18 @@ input[type="text"]:hover {
 }
 
 .btn-create::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -302,9 +317,15 @@ input[type="text"]:hover {
   animation: scaleIn 0.4s ease backwards;
 }
 
-.stat-item:nth-child(1) { animation-delay: 0.1s; }
-.stat-item:nth-child(2) { animation-delay: 0.2s; }
-.stat-item:nth-child(3) { animation-delay: 0.3s; }
+.stat-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.stat-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.stat-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
 
 @keyframes scaleIn {
   from {
@@ -373,7 +394,8 @@ input[type="text"]:hover {
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.5;
   }
   50% {
@@ -432,7 +454,7 @@ input[type="text"]:hover {
 }
 
 .list::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 0;
@@ -486,8 +508,8 @@ input[type="text"]:hover {
 }
 
 .isdone:checked::after {
-  content: '\f00c';
-  font-family: 'Font Awesome 6 Free';
+  content: "\f00c";
+  font-family: "Font Awesome 6 Free";
   font-weight: 900;
   position: absolute;
   top: 50%;
@@ -517,7 +539,7 @@ input[type="text"]:hover {
   border: none;
   color: #fff;
   font-size: 1rem;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   resize: none;
   outline: none;
   min-height: 1.5rem;
@@ -535,7 +557,8 @@ input[type="text"]:hover {
 }
 
 @keyframes glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 rgba(255, 255, 255, 0);
   }
   50% {
@@ -642,7 +665,7 @@ input[type="text"]:hover {
   color: #fff;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: 500;
 }
 
@@ -784,7 +807,7 @@ input[type="text"]:hover {
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -972,4 +995,47 @@ input[type="text"]:hover {
 
 audio {
   display: none;
+}
+
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    color-scheme: dark;
+    -webkit-color-profile: sRGB;
+  }
+
+  body::before {
+    opacity: 0.85;
+  }
+
+  .forms,
+  .modal-content {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+
+  .modal {
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+  }
+
+  .forms,
+  .modal-content,
+  .stat-item,
+  .list,
+  .text2:not(:disabled),
+  input[type="text"],
+  .btn-settings,
+  .edit {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .list,
+  .btn-create,
+  .delete,
+  .page-btn {
+    will-change: transform;
+  }
 }

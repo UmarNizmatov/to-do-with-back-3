@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --primary: #667eea;
@@ -24,7 +24,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   min-height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   position: relative;
@@ -36,22 +36,31 @@ body {
 
 /* Animated background */
 body::before {
-  content: '';
+  content: "";
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: 
-    radial-gradient(circle at 20% 50%, rgba(120, 119, 198, 0.3), transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(252, 163, 17, 0.3), transparent 50%),
+  background:
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(120, 119, 198, 0.3),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(252, 163, 17, 0.3),
+      transparent 50%
+    ),
     radial-gradient(circle at 40% 20%, rgba(139, 92, 246, 0.3), transparent 50%);
   animation: bgShift 15s ease infinite;
   z-index: -1;
 }
 
 @keyframes bgShift {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1);
   }
@@ -138,7 +147,8 @@ body::before {
 }
 
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(0) scale(1);
     opacity: 0;
   }
@@ -208,7 +218,8 @@ body::before {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {
@@ -217,7 +228,7 @@ body::before {
 }
 
 .login-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #fff;
@@ -296,7 +307,7 @@ body::before {
   outline: none;
   background: rgba(255, 255, 255, 0.1);
   color: #fff;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -329,7 +340,7 @@ body::before {
 }
 
 .toggle-password.active i::before {
-  content: '\f070'; /* fa-eye-slash */
+  content: "\f070"; /* fa-eye-slash */
 }
 
 .form-group input::placeholder {
@@ -357,9 +368,16 @@ body::before {
 }
 
 @keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  75% { transform: translateX(5px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 /* Button */
@@ -401,13 +419,18 @@ body::before {
 
 .btn-login::before,
 .btn-register::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
   transition: left 0.5s;
 }
 
@@ -515,4 +538,30 @@ body::before {
 
 .loading {
   animation: spin 1s linear infinite;
+}
+/* Safari / iOS fixes without changing colors */
+
+@supports (-webkit-touch-callout: none) {
+  body {
+    color-scheme: dark;
+    -webkit-color-profile: sRGB;
+  }
+
+  body::before {
+    opacity: 0.85;
+  }
+
+  .login-box {
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+  }
+
+  .login-box,
+  .form-group input,
+  .btn-login,
+  .btn-register {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
+  }
 }
