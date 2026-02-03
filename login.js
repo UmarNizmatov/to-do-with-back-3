@@ -149,12 +149,12 @@ async function handleRegistration(username, password) {
     if (!response.ok) throw new Error("Failed to fetch users");
     
     const users = await response.json();
-    // const existingUser = users.find(u => u.username === username);
+    const existingUser = users.find(u => u.username === username);
     
-    // if (existingUser) {
-    //   showError("username", "Это имя пользователя уже занято");
-    //   return;
-    // }
+    if (existingUser) {
+      showError("username", "Это имя пользователя уже занято");
+      return;
+    }
     
     // Create new user
     const newUser = {
